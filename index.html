@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Eco Gadgets - Future Forward</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">
+                <i class="fas fa-seedling me-2"></i>EcoGadgets
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#top-picks">Top Picks</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+     <!-- 1. Hero Section -->
+     <section id="hero" class="d-flex align-items-center text-center text-white">
+        <!-- Video Background -->
+        <video playsinline autoplay muted loop id="hero-video">
+            <!-- *** IMPORTANT: Make sure this path is correct relative to your HTML file *** -->
+            <source src="solar energy stock video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <!-- Content wrapper for GSAP -->
+            <div class="hero-content">
+                <h1 class="display-3 fw-bold hero-heading">Smart, Eco-Friendly Gadgets for a Better Tomorrow</h1>
+                <p class="lead my-4 hero-subheading">Discover budget smart devices and save the planet, one gadget at a time.</p>
+                <div> <!-- Wrapper div for button layout -->
+                    <a href="#top-picks" class="btn btn-primary btn-lg hero-cta-button mb-2 mb-lg-0 me-lg-3">Explore Top Picks</a>
+                    <a href="#categories" class="btn btn-outline-light btn-lg hero-secondary-button">View Categories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section Divider -->
+    <hr class="section-divider my-0">
+
+    <!-- 2. Featured Categories Section -->
+    <section id="categories" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold section-title">Featured Categories</h2> <!-- Removed data-aos here as GSAP handles entrance -->
+            <div class="row text-center g-4">
+                <!-- Category 1 -->
+                <div class="col-md-4">
+                    <div class="category-item card-style p-4">
+                        <div class="icon-circle bg-warning mb-3 mx-auto">
+                           <i class="fas fa-solar-panel fa-2x text-white"></i>
+                        </div>
+                        <h3 class="fs-5 fw-semibold mb-2">Solar Gadgets</h3>
+                        <p class="small text-muted">Harness the power of the sun efficiently.</p>
+                    </div>
+                </div>
+                <!-- Category 2 -->
+                <div class="col-md-4">
+                     <div class="category-item card-style p-4">
+                        <div class="icon-circle bg-info mb-3 mx-auto">
+                           <i class="fas fa-plug-circle-bolt fa-2x text-white"></i>
+                        </div>
+                        <h3 class="fs-5 fw-semibold mb-2">Budget Smart Home</h3>
+                        <p class="small text-muted">Automate your home affordably.</p>
+                    </div>
+                </div>
+                <!-- Category 3 -->
+                <div class="col-md-4">
+                     <div class="category-item card-style p-4">
+                         <div class="icon-circle bg-success mb-3 mx-auto">
+                           <i class="fas fa-leaf fa-2x text-white"></i>
+                         </div>
+                        <h3 class="fs-5 fw-semibold mb-2"> Eco Power Solutions</h3>
+                        <p class="small text-muted">Sustainable energy storage.</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Top Picks / Bestseller Section -->
+    <section id="top-picks" class="py-5 bg-light-subtle">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold section-title">Top Picks & Bestsellers</h2>
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 card-style product-card">
+                        <!-- *** IMPORTANT: Make sure this path is correct *** -->
+                        <img src="solar cell.jpg" class="card-img-top" alt="Best Solar Charger">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Best Solar Chargers of 2025</h5>
+                            <p class="card-text small text-muted flex-grow-1">Top-rated portable solar chargers for your outdoor adventures.</p>
+                            <a href="#" class="btn btn-outline-primary mt-auto align-self-start">Read Review</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 card-style product-card">
+                        <!-- *** IMPORTANT: Make sure this path is correct *** -->
+                        <img src="plugs in.jpg" class="card-img-top" alt="Top Smart Plugs">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Top Smart Plugs Under $25</h5>
+                            <p class="card-text small text-muted flex-grow-1">Control appliances remotely and save energy efficiently.</p>
+                            <a href="#" class="btn btn-outline-primary mt-auto align-self-start">Read Review</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 card-style product-card">
+                        <!-- *** IMPORTANT: Make sure this path is correct *** -->
+                        <img src="Smart Home Starter.jpg" class="card-img-top" alt="Eco Smart Home Starter Kits">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Eco Smart Home Starter Kits</h5>
+                             <p class="card-text small text-muted flex-grow-1">Begin your smart and sustainable home journey easily.</p>
+                            <a href="#" class="btn btn-outline-primary mt-auto align-self-start">Read Review</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Section Divider -->
+    <hr class="section-divider my-0">
+
+    <!-- 4. Why Eco-Friendly? (Trust Section) -->
+    <section id="why-eco" class="py-5">
+        <div class="container">
+             <h2 class="text-center mb-5 fw-bold section-title">Why Go Eco & Smart?</h2>
+             <div class="row text-center g-5">
+                 <div class="col-md-4">
+                     <div class="p-3 trust-item">
+                        <i class="fas fa-globe-americas fa-3x text-primary mb-3 trust-icon"></i>
+                        <h4 class="fs-5 fw-semibold">Save Environment</h4>
+                        <p class="small text-muted">Reduce your carbon footprint with energy-efficient tech.</p>
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                      <div class="p-3 trust-item">
+                        <i class="fas fa-coins fa-3x text-highlight mb-3 trust-icon"></i>
+                        <h4 class="fs-5 fw-semibold">Save Money</h4>
+                        <p class="small text-muted">Lower energy bills with smart consumption & solar.</p>
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                      <div class="p-3 trust-item">
+                        <i class="fas fa-brain fa-3x text-accent mb-3 trust-icon"></i>
+                        <h4 class="fs-5 fw-semibold">Smarter Living</h4>
+                        <p class="small text-muted">Automate, secure, and live more conveniently.</p>
+                     </div>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- 5. Latest Blog Posts -->
+    <section id="blog" class="py-5 bg-light-subtle">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold section-title">Latest From Our Blog</h2>
+            <div class="row g-4">
+                 <!-- Blog Post 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 card-style blog-card">
+                         <!-- *** IMPORTANT: Make sure this path is correct *** -->
+                         <img src="student pics.webp" class="card-img-top" alt="Blog Post 1">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Top 5 Solar Devices for Students</h5>
+                            <p class="card-text small text-muted mb-3">Stay powered up on campus sustainably.</p>
+                            <a href="#" class="text-primary small fw-medium link-style">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Blog Post 2 -->
+                 <div class="col-md-4">
+                    <div class="card h-100 card-style blog-card">
+                         <!-- *** IMPORTANT: Make sure this path is correct *** -->
+                         <img src="home.avif" class="card-img-top" alt="Blog Post 2">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Affordable Smart Home Under $200</h5>
+                             <p class="card-text small text-muted mb-3">Transform your home into a smart hub.</p>
+                            <a href="#" class="text-primary small fw-medium link-style">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Blog Post 3 -->
+                 <div class="col-md-4">
+                    <div class="card h-100 card-style blog-card">
+                         <!-- *** IMPORTANT: Make sure this path is correct *** -->
+                         <img src="saving tips.webp" class="card-img-top" alt="Blog Post 3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Simple Energy Saving Tips</h5>
+                            <p class="card-text small text-muted mb-3">Easy changes to save energy and money.</p>
+                            <a href="#" class="text-primary small fw-medium link-style">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5"> <!-- Removed data-aos -->
+                 <a href="#" class="btn btn-primary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+     <!-- Section Divider -->
+     <hr class="section-divider my-0">
+
+    <!-- 6. Email Subscription Box -->
+    <section id="subscribe" class="py-5 text-center">
+        <div class="container"> <!-- Removed data-aos -->
+             <h3 class="fw-bold mb-3 section-title-light">Get the Best Eco-Friendly Deals Weekly! 🚀</h3>
+             <p class="lead mb-4 text-light">Join our newsletter for exclusive offers and tips.</p>
+             <form class="row justify-content-center">
+                 <div class="col-md-6">
+                     <div class="input-group mb-3">
+                         <input type="email" class="form-control form-control-lg" placeholder="Enter your email address" aria-label="Email Address" aria-describedby="subscribe-button" required>
+                         <button class="btn btn-highlight fw-bold" type="submit" id="subscribe-button">Subscribe</button> <!-- Removed pulse-button class, handled by CSS animation -->
+                     </div>
+                 </div>
+             </form>
+        </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer id="footer" class="footer pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row gy-4">
+                <!-- Column 1: About -->
+                <div class="col-md-4 col-lg-4 mx-auto mb-4 footer-col"> <!-- Added class for targeting -->
+                    <h5 class="text-uppercase fw-bold mb-4"><i class="fas fa-seedling me-2"></i>EcoGadgets Pro</h5>
+                    <p>Your premium source for smart, affordable, and eco-friendly gadgets driving a sustainable future.</p>
+                </div>
+
+                 <!-- Column 2: Quick Links -->
+                <div class="col-md-2 col-lg-2 mx-auto mb-4 footer-col"> <!-- Added class for targeting -->
+                    <h5 class="text-uppercase fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#!" class="footer-link">About Us</a></li>
+                        <li class="mb-2"><a href="#blog" class="footer-link">Blog</a></li>
+                        <li class="mb-2"><a href="#!" class="footer-link">Contact</a></li>
+                        <li class="mb-2"><a href="#!" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                 <!-- Column 3: Social Media -->
+                <div class="col-md-3 col-lg-2 mx-auto mb-4 footer-col"> <!-- Added class for targeting -->
+                    <h5 class="text-uppercase fw-bold mb-4">Follow Us</h5>
+                    <div class="d-flex justify-content-center justify-content-md-start">
+                        <a href="#!" class="social-icon me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#!" class="social-icon me-3"><i class="fab fa-pinterest fa-lg"></i></a>
+                        <a href="#!" class="social-icon me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center pt-4 mt-4 border-top border-secondary-subtle copyright footer-col"> <!-- Added class for targeting -->
+                © 2024 EcoGadgets Pro. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

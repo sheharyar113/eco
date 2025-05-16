@@ -1,0 +1,649 @@
+/* --- Global Styles & NEW Color Variables --- */
+:root {
+    /* New Color Palette */
+    --deep-navy-blue: #2C3E50;
+    --off-white: #F4F6F6;
+    --light-gray: #BDC3C7;
+    --electric-green: #00FF00; /* Use cautiously, check contrast */
+    --soft-coral: #FF6F61;
+    --light-mint-green: #A3E4D7;
+    --dark-teal: #1A3C3D;
+    --bright-yellow-hover: #F1C40F;
+    --light-pink-active: #F1948A;
+    --primary-text-color: #333333; /* Defined for clarity */
+  
+    /* Existing Variables (Adjusted if needed) */
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    --transition-speed: 0.3s;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--primary-text-color); /* Default text color */
+    background-color: var(--off-white); /* Default page background */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--deep-navy-blue); /* Default heading color */
+  }
+  
+  a {
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+    color: var(--soft-coral); /* Default link color */
+  }
+  
+  a:hover {
+    color: var(--bright-yellow-hover); /* General link hover */
+  }
+  
+  /* Enable smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* --- Helper Classes for Animations (Keep As Is) --- */
+  .hidden-initial {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger delay classes (if used by JS) */
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; }
+  
+  /* --- Navigation Bar --- */
+  .navbar {
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    background-color: var(--off-white) !important; /* White background for Nav */
+  }
+  
+  .navbar-brand {
+    color: var(--deep-navy-blue) !important; /* Navy brand color */
+    font-weight: bold;
+  }
+  
+  .navbar-brand i {
+    color: var(--electric-green); /* Green icon */
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+    padding: 0.8rem 1rem;
+    color: var(--deep-navy-blue) !important; /* Navy links */
+  }
+  
+  .nav-link:hover {
+    margin-top: 0px;
+    color: var(--bright-yellow-hover) !important;
+    border-bottom: 2px solid var(--bright-yellow-hover) ; /* Yellow hover */
+  }
+  
+  .nav-link.active {
+    color: var(--light-pink-active) !important; /* Pink active state */
+    font-weight: 700; /* Make active link bolder */
+  }
+  
+  .navbar-toggler {
+    border: none;
+    color: var(--deep-navy-blue); /* Toggler icon color */
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .navbar-toggler-icon {
+     /* Use SVG background image to color the toggler */
+     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(44, 62, 80, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  
+  
+  /* --- 1. Hero Section --- */
+  #hero {
+    position: relative;
+    height: 90vh;
+    min-height: 500px;
+    overflow: hidden;
+    color: var(--off-white); /* Default text color on hero */
+    display: flex; /* Ensure flex properties apply */
+    align-items: center;
+    text-align: center;
+  }
+  
+  #hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--deep-navy-blue); /* Deep Navy Blue Overlay */
+    opacity: 0.85; /* Slight transparency if needed, adjust as desired */
+    z-index: -1;
+  }
+  
+  #hero .container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .hero-heading {
+    color: var(--off-white) !important; /* Off-White Heading */
+    /* Animation handled by JS */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .hero-subheading {
+    color: var(--light-gray) !important; /* Light Gray Subheading */
+     /* Animation handled by JS */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  /* Hero Buttons */
+  #hero .btn {
+    padding: 12px 30px;
+    font-weight: 700; /* Bolder button text */
+    border: none; /* Remove border for solid buttons */
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, color var(--transition-speed) ease;
+    color: var(--primary-text-color); /* Default button text color */
+    margin: 5px; /* Add some margin */
+     /* Animation handled by JS */
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  #hero .btn:hover {
+      transform: translateY(-3px);
+      background-color: var(--bright-yellow-hover);
+      color: var(--primary-text-color); /* Ensure text is readable on yellow */
+  }
+  #hero .btn:active {
+      background-color: var(--light-pink-active);
+      transform: translateY(0); /* Reset transform on click */
+  }
+  
+  #hero .hero-cta-button { /* Primary Button */
+    background-color: var(--electric-green);
+    color: var(--primary-text-color); /* Dark text on bright green */
+  }
+  
+  #hero .hero-secondary-button { /* Secondary Button */
+    background-color: var(--soft-coral);
+     color: var(--off-white); /* Light text on coral */
+  }
+  /* Ensure hover applies correctly */
+  #hero .hero-cta-button:hover {
+    background-color: var(--bright-yellow-hover);
+    color: var(--primary-text-color);
+  }
+  #hero .hero-secondary-button:hover {
+     background-color: var(--bright-yellow-hover);
+     color: var(--primary-text-color);
+  }
+  
+  /* Visibility classes added by JS */
+  .hero-heading.visible { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+  .hero-subheading.visible { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+  .hero-cta-button.visible { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+  .hero-secondary-button.visible { transition-delay: 0.7s; opacity: 1; transform: translateY(0); }
+  
+  
+  /* --- Section Divider --- */
+  .section-divider {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  }
+  
+  /* --- General Section Styling --- */
+  section {
+      overflow: hidden; /* Prevent scrollbars during animation */
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+  }
+  
+  .section-title {
+      margin-bottom: 3rem !important;
+      position: relative;
+      padding-bottom: 10px;
+      color: var(--deep-navy-blue); /* Default section title color */
+  }
+  
+  .section-title::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--deep-navy-blue); /* Default underline color */
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  
+  /* --- 2. Featured Categories Section --- */
+  #categories {
+    background-color: var(--off-white); /* Off-White background */
+  }
+  
+  #categories .section-title {
+    color: var(--deep-navy-blue); /* Navy heading */
+  }
+  #categories .section-title::after {
+    background: var(--deep-navy-blue); /* Navy underline */
+  }
+  
+  .category-item {
+    text-align: center;
+    border-radius: 8px;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    background-color: var(--light-mint-green); /* Light Mint Green Card */
+    box-shadow: var(--card-shadow);
+  }
+  
+  .category-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-hover-shadow);
+  }
+  
+  /* Override Bootstrap bg colors for icon circles within this section */
+  #categories .icon-circle.bg-warning, /* Using existing class */
+  #categories .icon-circle.bg-success { /* Using existing class */
+      background-color: var(--electric-green) !important; /* Electric Green Circle */
+  }
+  #categories .icon-circle.bg-info { /* Using existing class */
+      background-color: var(--soft-coral) !important; /* Soft Coral Circle */
+  }
+  
+  .icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-speed) ease;
+  }
+  .icon-circle i {
+      color: var(--primary-text-color); /* Dark icon color for contrast */
+  }
+  
+  .category-item:hover .icon-circle {
+      transform: scale(1.1);
+  }
+  
+  .category-item h3 {
+      color: var(--primary-text-color); /* Primary text color */
+      font-size: 1.1rem; /* Adjust size if needed */
+  }
+  .category-item p {
+      color: var(--primary-text-color); /* Primary text color */
+  }
+  
+  
+  /* --- 3. Top Picks / Bestseller Section --- */
+  #top-picks {
+    background-color: var(--light-gray); /* Light Gray background */
+  }
+  
+  #top-picks .section-title {
+    color: var(--deep-navy-blue); /* Navy heading */
+  }
+  #top-picks .section-title::after {
+    background: var(--deep-navy-blue); /* Navy underline */
+  }
+  
+  /* --- Card Styles (General for Product & Blog) --- */
+  .card-style {
+      border: none;
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      overflow: hidden;
+  }
+  
+  .card-style:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--card-hover-shadow);
+  }
+  
+  .card-img-top {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+  }
+  
+  .card-style:hover .card-img-top {
+      transform: scale(1.05);
+  }
+  
+  /* Specific Card Styles for Top Picks */
+  #top-picks .product-card {
+       background-color: var(--off-white); /* Off-White card background */
+  }
+  #top-picks .product-card .card-title,
+  #top-picks .product-card .card-text {
+      color: var(--primary-text-color); /* Primary text color */
+  }
+  
+  /* Button in Top Picks */
+  #top-picks .product-card .btn {
+       background-color: var(--electric-green);
+       border: none;
+       color: var(--primary-text-color); /* Dark text on green */
+       font-weight: 500;
+       padding: 0.5rem 1rem;
+       transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  }
+  #top-picks .product-card .btn:hover {
+       background-color: var(--bright-yellow-hover);
+       color: var(--primary-text-color);
+       transform: scale(1.05);
+  }
+  #top-picks .product-card .btn:active {
+       background-color: var(--light-pink-active);
+       transform: scale(1);
+  }
+  
+  
+  /* --- 4. Why Eco-Friendly? (Trust Section) --- */
+  #why-eco {
+    background-color: var(--light-mint-green); /* Light Mint Green background */
+  }
+  
+  #why-eco .section-title {
+    color: var(--deep-navy-blue); /* Navy heading */
+  }
+  #why-eco .section-title::after {
+    background: var(--deep-navy-blue); /* Navy underline */
+  }
+  
+  .trust-item {
+      transition: transform var(--transition-speed) ease;
+      padding: 1.5rem;
+  }
+  .trust-item:hover {
+      transform: translateY(-5px);
+  }
+  .trust-icon {
+      transition: transform var(--transition-speed) ease;
+      margin-bottom: 1rem !important; /* Add space below icon */
+  }
+  .trust-item:hover .trust-icon {
+      transform: scale(1.15) rotate(-5deg);
+  }
+  
+  /* Specific Icon Colors for Trust Section (Overrides Bootstrap text colors used in HTML) */
+  #why-eco .trust-item .text-primary { /* First Icon */
+      color: var(--electric-green) !important;
+  }
+  #why-eco .trust-item .text-highlight { /* Second Icon */
+      color: var(--soft-coral) !important;
+  }
+  #why-eco .trust-item .text-accent { /* Third Icon */
+      color: var(--electric-green) !important;
+  }
+  
+  #why-eco .trust-item h4 {
+      color: var(--primary-text-color); /* Primary text color */
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+  }
+  #why-eco .trust-item p {
+      color: var(--light-gray); /* Light Gray for secondary text */
+      font-size: 0.95rem;
+  }
+  
+  
+  /* --- 5. Latest Blog Posts Section --- */
+  #blog {
+    background-color: var(--light-gray); /* Light Gray background */
+  }
+  
+  #blog .section-title {
+    color: var(--deep-navy-blue); /* Navy heading */
+  }
+  #blog .section-title::after {
+    background: var(--deep-navy-blue); /* Navy underline */
+  }
+  
+  #blog .blog-card {
+       background-color: var(--off-white); /* Off-White card background */
+  }
+  #blog .blog-card .card-title,
+  #blog .blog-card .card-text {
+      color: var(--primary-text-color); /* Primary text color */
+  }
+  
+  /* Link style in Blog Cards */
+  .link-style {
+      font-weight: 500;
+      display: inline-block;
+      transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+      color: var(--electric-green) !important; /* Electric Green link */
+  }
+  
+  .link-style:hover {
+      transform: translateX(5px);
+      color: var(--bright-yellow-hover) !important; /* Yellow hover */
+  }
+  .link-style i {
+      transition: transform var(--transition-speed) ease;
+      margin-left: 5px;
+  }
+  .link-style:hover i {
+      transform: translateX(3px);
+  }
+  
+  /* View All Articles Button */
+  #blog .btn-primary {
+      background-color: var(--electric-green);
+      border-color: var(--electric-green);
+      color: var(--primary-text-color);
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+      transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  }
+  #blog .btn-primary:hover {
+      background-color: var(--bright-yellow-hover);
+      border-color: var(--bright-yellow-hover);
+      color: var(--primary-text-color);
+      transform: scale(1.05);
+  }
+  #blog .btn-primary:active {
+      background-color: var(--light-pink-active);
+      border-color: var(--light-pink-active);
+      transform: scale(1);
+  }
+  
+  
+  /* --- 6. Email Subscription Box --- */
+  #subscribe {
+      background: var(--deep-navy-blue); /* Navy Blue background */
+      color: var(--off-white); /* Light text */
+      padding: 4rem 0;
+  }
+  
+  #subscribe h3 {
+      color: var(--off-white) !important; /* Off-white heading */
+      font-weight: 700;
+  }
+  
+  #subscribe p.lead {
+      color: var(--light-gray) !important; /* Light gray text */
+      margin-bottom: 2rem !important;
+  }
+  
+  #subscribe .form-control {
+      border-radius: 50px 0 0 50px; /* Rounded left */
+      border: none;
+      padding: 0.85rem 1.5rem; /* Slightly larger padding */
+      background-color: var(--off-white); /* Off-white input background */
+      color: var(--primary-text-color);
+      font-size: 1rem;
+  }
+  #subscribe .form-control::placeholder {
+      color: var(--light-gray);
+  }
+  #subscribe .form-control:focus {
+      box-shadow: 0 0 0 0.25rem rgba(244, 246, 246, 0.3); /* Off-white focus ring */
+      background-color: #fff; /* Brighter white on focus */
+  }
+  
+  #subscribe .btn-highlight { /* The subscribe button */
+      background-color: var(--electric-green);
+      color: var(--primary-text-color); /* Dark text */
+      border: none;
+      border-radius: 0 50px 50px 0; /* Rounded right */
+      padding: 0.85rem 1.5rem;
+      font-weight: 700; /* Bold button text */
+      transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+      /* Keep pulse or remove? Let's keep it but adapt color */
+      animation: pulse-green 2s infinite ease-in-out;
+  }
+  
+  #subscribe .btn-highlight:hover {
+      background-color: var(--bright-yellow-hover);
+      color: var(--primary-text-color);
+      transform: scale(1.05);
+      animation-play-state: paused; /* Pause pulse on hover */
+  }
+  #subscribe .btn-highlight:active {
+      background-color: var(--light-pink-active);
+      transform: scale(1);
+  }
+  
+  /* Adjusted Pulse Animation for Green Button */
+  @keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+  }
+  
+  
+  /* --- 7. Footer --- */
+  .footer {
+      background-color: var(--dark-teal); /* Dark Teal background */
+      color: var(--off-white); /* Off-white text */
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+  }
+  
+  .footer h5 {
+      color: var(--off-white);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+  }
+  .footer h5 i {
+      color: var(--electric-green); /* Green icon in footer title */
+  }
+  
+  .footer p {
+      color: var(--light-gray); /* Lighter gray for paragraph text */
+  }
+  
+  .footer-link {
+      color: var(--off-white); /* Off-white links */
+      display: inline-block;
+      margin-bottom: 0.75rem; /* More spacing */
+      transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  }
+  
+  .footer-link:hover {
+      color: var(--bright-yellow-hover); /* Yellow hover for links */
+      transform: translateX(4px);
+  }
+  
+  .social-icon {
+      color: var(--electric-green); /* Electric Green icons */
+      font-size: 1.5rem; /* Slightly larger social icons */
+      transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+      margin-right: 1rem !important; /* Ensure spacing */
+  }
+  
+  .social-icon:hover {
+      color: var(--bright-yellow-hover); /* Yellow hover for icons */
+      transform: scale(1.2);
+  }
+  
+  .footer .border-top {
+      border-color: rgba(244, 246, 246, 0.15) !important; /* Lighter border using Off-White base */
+      margin-top: 2rem !important;
+      padding-top: 2rem !important;
+  }
+  
+  .copyright {
+      font-size: 0.9em;
+      color: var(--light-gray); /* Light gray for copyright */
+  }
+  
+  /* --- Responsive Adjustments (Keep As Is or Adjust if needed) --- */
+  @media (max-width: 768px) {
+      #hero {
+          height: 80vh;
+          min-height: 450px;
+      }
+  
+      h1.display-3 {
+          font-size: 2.5rem; /* Slightly smaller H1 */
+      }
+  
+      .lead {
+          font-size: 1rem;
+      }
+  
+      .section-title {
+          margin-bottom: 2rem !important;
+      }
+  
+      .footer .text-md-start {
+          text-align: center !important;
+      }
+      .footer .justify-content-md-start {
+          justify-content: center !important;
+      }
+  
+      #subscribe .form-control,
+      #subscribe .btn-highlight {
+          border-radius: 50px; /* Fully rounded on mobile */
+          margin-bottom: 10px;
+      }
+      #subscribe .input-group {
+          flex-direction: column;
+      }
+       #subscribe .btn-highlight {
+           width: 100%; /* Full width button */
+       }
+  }
